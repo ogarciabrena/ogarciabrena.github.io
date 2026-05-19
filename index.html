@@ -56,9 +56,9 @@ nav{
   font-family:var(--serif);font-size:20px;font-weight:600;
   color:var(--text);text-decoration:none;letter-spacing:.01em;
 }
-.nav-name span{color:var(--accent);font-style:italic}
+.nav-name span{color:var(--text);font-style:normal}
 .nav-links{display:flex;gap:1.5rem;list-style:none;align-items:center}
-.nav-links a{font-size:12px;color:var(--muted);text-decoration:none;letter-spacing:.05em;text-transform:uppercase;transition:color .2s}
+.nav-links a{font-size:13px;color:var(--muted);text-decoration:none;letter-spacing:.05em;text-transform:uppercase;transition:color .2s}
 .nav-links a:hover{color:var(--text)}
 .nav-cta{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(126,184,138,0.3);padding:6px 18px;border-radius:2px;text-decoration:none;transition:background .2s,border-color .2s}
 .nav-cta:hover{background:rgba(126,184,138,0.1);border-color:var(--accent)}
@@ -78,7 +78,7 @@ h1{
   color:var(--text);margin-bottom:2rem;
 }
 h1 em{color:var(--accent);font-style:italic;font-weight:400}
-.hero-desc{font-size:.9rem;color:var(--muted);line-height:1.85;font-weight:300;max-width:460px;margin-bottom:2.5rem;letter-spacing:.01em}
+.hero-desc{font-size:1rem;color:var(--muted);line-height:1.85;font-weight:300;max-width:460px;margin-bottom:2.5rem;letter-spacing:.01em}
 .hero-desc strong{color:var(--text);font-weight:500}
 .hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:2.5rem}
 .btn-main{background:var(--accent);color:var(--bg);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:12px 28px;border-radius:2px;text-decoration:none;transition:opacity .2s}
@@ -86,7 +86,7 @@ h1 em{color:var(--accent);font-style:italic;font-weight:400}
 .btn-out{background:transparent;color:var(--muted);font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;padding:11px 24px;border-radius:2px;border:1px solid var(--border2);text-decoration:none;transition:color .2s,border-color .2s}
 .btn-out:hover{color:var(--text);border-color:rgba(255,255,255,.25)}
 .hero-tags{display:flex;flex-wrap:wrap;gap:7px}
-.htag{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);padding:4px 12px;border-radius:20px}
+.htag{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);padding:4px 12px;border-radius:20px}
 
 /* HERO CARD */
 .hero-card{background:rgba(20,23,20,0.75);border:1px solid var(--border2);border-radius:8px;padding:1.75rem;backdrop-filter:blur(12px)}
@@ -123,8 +123,8 @@ h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3.4rem);font-weight:700;let
 .srv-card:hover{background:rgba(25,29,24,.9)}
 .srv-num{font-size:10px;letter-spacing:.15em;color:var(--muted);font-weight:500;margin-bottom:.75rem}
 .srv-ico{font-size:22px;margin-bottom:.75rem}
-.srv-title{font-family:var(--serif);font-size:18px;font-weight:600;color:var(--text);margin-bottom:.5rem}
-.srv-desc{font-size:13px;color:var(--muted);line-height:1.75;font-weight:300}
+.srv-title{font-family:var(--serif);font-size:20px;font-weight:600;color:var(--text);margin-bottom:.5rem}
+.srv-desc{font-size:14px;color:var(--muted);line-height:1.75;font-weight:300}
 .srv-pills{display:flex;flex-wrap:wrap;gap:5px;margin-top:.9rem}
 .srv-pill{font-size:10px;letter-spacing:.06em;text-transform:uppercase;font-weight:500;color:var(--accent2);background:rgba(90,148,104,.08);padding:2px 8px;border-radius:2px}
 
@@ -185,25 +185,25 @@ h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3.4rem);font-weight:700;let
 .p-step:last-child{border-bottom:none}
 .p-n{font-size:10px;letter-spacing:.12em;color:var(--accent2);font-weight:600;padding-top:4px;min-width:22px}
 .p-title{font-family:var(--serif);font-size:17px;font-weight:600;color:var(--text);margin-bottom:5px}
-.p-desc{font-size:13px;color:var(--muted);line-height:1.75;font-weight:300}
+.p-desc{font-size:14px;color:var(--muted);line-height:1.75;font-weight:300}
 .proc-aside{background:rgba(20,23,20,.65);border:1px solid var(--border2);border-radius:6px;padding:2rem;position:sticky;top:72px;backdrop-filter:blur(10px)}
 .pa-title{font-family:var(--serif);font-size:17px;font-weight:600;color:var(--text);margin-bottom:1.25rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}
 .pa-list{display:flex;flex-direction:column;gap:.9rem}
 .pa-item{display:flex;gap:10px;align-items:flex-start}
 .pa-ico{width:26px;height:26px;border-radius:4px;flex-shrink:0;background:rgba(126,184,138,.08);border:1px solid rgba(126,184,138,.15);display:flex;align-items:center;justify-content:center;font-size:12px}
-.pa-text{font-size:12px;color:var(--muted);line-height:1.65;font-weight:300}
+.pa-text{font-size:13px;color:var(--muted);line-height:1.65;font-weight:300}
 .pa-text strong{color:var(--text);font-weight:500}
 
 /* SOBRE MÍ */
 .about-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:5rem;align-items:center;margin-top:3rem}
-.about-copy p{font-size:.9rem;color:var(--muted);line-height:1.9;font-weight:300;margin-bottom:1rem}
+.about-copy p{font-size:1rem;color:var(--muted);line-height:1.9;font-weight:300;margin-bottom:1rem}
 .about-copy p strong{color:var(--text);font-weight:500}
 .about-cards{display:flex;flex-direction:column;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:6px;overflow:hidden}
 .ab-card{background:rgba(20,23,20,.6);padding:1.1rem 1.4rem;display:flex;gap:.9rem;align-items:flex-start;transition:background .2s}
 .ab-card:hover{background:rgba(25,29,24,.9)}
 .ab-ico{font-size:16px;width:28px;text-align:center;flex-shrink:0;padding-top:1px}
-.ab-text{font-size:12px;color:var(--muted);line-height:1.55;font-weight:300}
-.ab-text strong{color:var(--text);font-weight:500;display:block;margin-bottom:1px;font-size:13px}
+.ab-text{font-size:13px;color:var(--muted);line-height:1.55;font-weight:300}
+.ab-text strong{color:var(--text);font-weight:500;display:block;margin-bottom:1px;font-size:14px}
 
 /* CONTACTO */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;margin-top:3rem}
@@ -212,12 +212,12 @@ h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3.4rem);font-weight:700;let
 .dlink:hover{background:rgba(25,29,24,.9)}
 .dlink-ico{width:28px;height:28px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;border:1px solid var(--border)}
 .dlink-label{font-size:10px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:1px}
-.dlink-val{font-size:12px;color:var(--text);font-weight:400}
+.dlink-val{font-size:13px;color:var(--text);font-weight:400}
 .dlink-arr{margin-left:auto;font-size:13px;color:var(--muted)}
 
 /* LEAD FORM */
 .lead-form{background:rgba(20,23,20,.75);border:1px solid var(--border2);border-radius:8px;padding:2rem;backdrop-filter:blur(12px)}
-.form-title{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--text);margin-bottom:.3rem}
+.form-title{font-family:var(--serif);font-size:24px;font-weight:600;color:var(--text);margin-bottom:.3rem}
 .form-sub{font-size:12px;color:var(--muted);margin-bottom:1.5rem;line-height:1.5;font-weight:300}
 .field{margin-bottom:1rem}
 .field label{display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-bottom:5px}
@@ -259,6 +259,9 @@ footer{padding:2rem;display:flex;align-items:center;justify-content:space-betwee
 .save-contact-btn:hover{background:rgba(126,184,138,0.18);border-color:var(--accent)}
 .save-contact-btn svg{flex-shrink:0}
 
+/* SKELETON PULSE */
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
 /* FADE IN */
 .fi{opacity:0;transform:translateY(14px);transition:opacity .65s ease,transform .65s ease}
 .fi.in{opacity:1;transform:none}
@@ -289,7 +292,7 @@ footer{padding:2rem;display:flex;align-items:center;justify-content:space-betwee
 <div class="page">
 
 <nav>
-  <a href="#" class="nav-name">Omar García <span>Brena</span></a>
+  <a href="#" class="nav-name">Omar García Brena</a>
   <ul class="nav-links">
     <li><a href="#servicios">Servicios</a></li>
     <li><a href="#demos">Catálogo</a></li>
@@ -313,7 +316,6 @@ footer{padding:2rem;display:flex;align-items:center;justify-content:space-betwee
       <p class="hero-desc">Hola, soy <strong>Omar García Brena</strong>. Implemento soluciones tecnológicas reales — videovigilancia, redes, POS, cloud e IA aplicada. Sin sobre-ingeniería, sin costos ocultos.</p>
       <div class="hero-btns">
         <a href="#contacto" class="btn-main">Platiquemos</a>
-        <a href="#demos" class="btn-out">Ver catálogo</a>
         <a class="save-contact-btn" href="data:text/x-vcard;base64,QkVHSU46VkNBUkQNClZFUlNJT046My4wDQpGTjpPbWFyIEdhcmPDrWEgQnJlbmENCk46R2FyY8OtYSBCcmVuYTtPbWFyOzs7DQpUSVRMRTpDb25zdWx0b3IgVGVjbm9sw7NnaWNvIEluZGVwZW5kaWVudGUNCk9SRzpPbWFyIEdhcmPDrWEgQnJlbmENClRFTDtUWVBFPUNFTEwsVk9JQ0U6KzUyMTU1MTQ1NTIyMDINClRFTDtUWVBFPVdPUkssVk9JQ0U6KzUyMTU1MTQ1NTIyMDINCkVNQUlMO1RZUEU9SU5URVJORVQ6b2dhcmNpYWJyZW5hQGdtYWlsLmNvbQ0KVVJMOmh0dHBzOi8vb2dhcmNpYWJyZW5hLmdpdGh1Yi5pbw0KQURSO1RZUEU9V09SSzo7O09heGFjYTtPYXhhY2E7O03DqXhpY28NCk5PVEU6Q29uc3VsdG9yIFRlY25vbMOzZ2ljby4gVmlkZW92aWdpbGFuY2lhIENDVFYgfCBSZWRlcyBlIElUIHwgUE9TIHwgQ2xvdWQgZSBJQSB8IEF1dG9tYXRpemFjacOzbiB8IElvVC4gV2ViOiBvZ2FyY2lhYnJlbmEuZ2l0aHViLmlvDQpYLVNPQ0lBTFBST0ZJTEU7dHlwZT1saW5rZWRpbjpodHRwczovL3d3dy5saW5rZWRpbi5jb20vaW4vb21hci1nYXJjaWEtYnJlbmEtYjMyMTExMTEwDQpFTkQ6VkNBUkQ=" download="Omar-Garcia-Brena.vcf">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
           Guardar contacto
@@ -466,7 +468,7 @@ footer{padding:2rem;display:flex;align-items:center;justify-content:space-betwee
     <div class="fi"><p class="sec-label">05 — Contacto</p><h2>Cuéntame tu proyecto</h2></div>
     <div class="contact-grid fi">
       <div>
-        <p style="font-size:.9rem;color:var(--muted);line-height:1.85;font-weight:300;margin:1.5rem 0 1.75rem">Déjame tus datos y te contacto en menos de 24 horas. Oaxaca o cualquier estado — bienvenido.</p>
+        <p style="font-size:1rem;color:var(--muted);line-height:1.85;font-weight:300;margin:1.5rem 0 1.75rem">Déjame tus datos y te contacto en menos de 24 horas. Oaxaca o cualquier estado — bienvenido.</p>
         <div class="direct-links">
           <a href="mailto:ogarciabrena@gmail.com" class="dlink"><div class="dlink-ico">✉</div><div><div class="dlink-label">Email</div><div class="dlink-val">ogarciabrena@gmail.com</div></div><span class="dlink-arr">↗</span></a>
           <a href="https://wa.me/5215514552202" target="_blank" class="dlink"><div class="dlink-ico">💬</div><div><div class="dlink-label">WhatsApp</div><div class="dlink-val">+52 55 1455 2202</div></div><span class="dlink-arr">↗</span></a>
