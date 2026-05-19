@@ -253,7 +253,7 @@ footer{padding:2rem;display:flex;align-items:center;justify-content:space-betwee
   padding:11px 24px;border-radius:2px;
   cursor:pointer;font-family:var(--sans);
   transition:background .2s,color .2s,border-color .2s;
-  text-decoration:none;
+  text-decoration:none;box-sizing:border-box;
   -webkit-tap-highlight-color:transparent;
 }
 .save-contact-btn:hover{background:rgba(126,184,138,0.18);border-color:var(--accent)}
@@ -314,10 +314,10 @@ footer{padding:2rem;display:flex;align-items:center;justify-content:space-betwee
       <div class="hero-btns">
         <a href="#contacto" class="btn-main">Platiquemos</a>
         <a href="#demos" class="btn-out">Ver catálogo</a>
-        <button class="save-contact-btn" onclick="saveContact()">
+        <a class="save-contact-btn" href="data:text/x-vcard;base64,QkVHSU46VkNBUkQNClZFUlNJT046My4wDQpGTjpPbWFyIEdhcmPDrWEgQnJlbmENCk46R2FyY8OtYSBCcmVuYTtPbWFyOzs7DQpUSVRMRTpDb25zdWx0b3IgVGVjbm9sw7NnaWNvIEluZGVwZW5kaWVudGUNCk9SRzpPbWFyIEdhcmPDrWEgQnJlbmENClRFTDtUWVBFPUNFTEwsVk9JQ0U6KzUyMTU1MTQ1NTIyMDINClRFTDtUWVBFPVdPUkssVk9JQ0U6KzUyMTU1MTQ1NTIyMDINCkVNQUlMO1RZUEU9SU5URVJORVQ6b2dhcmNpYWJyZW5hQGdtYWlsLmNvbQ0KVVJMOmh0dHBzOi8vb2dhcmNpYWJyZW5hLmdpdGh1Yi5pbw0KQURSO1RZUEU9V09SSzo7O09heGFjYTtPYXhhY2E7O03DqXhpY28NCk5PVEU6Q29uc3VsdG9yIFRlY25vbMOzZ2ljby4gVmlkZW92aWdpbGFuY2lhIENDVFYgfCBSZWRlcyBlIElUIHwgUE9TIHwgQ2xvdWQgZSBJQSB8IEF1dG9tYXRpemFjacOzbiB8IElvVC4gV2ViOiBvZ2FyY2lhYnJlbmEuZ2l0aHViLmlvDQpYLVNPQ0lBTFBST0ZJTEU7dHlwZT1saW5rZWRpbjpodHRwczovL3d3dy5saW5rZWRpbi5jb20vaW4vb21hci1nYXJjaWEtYnJlbmEtYjMyMTExMTEwDQpFTkQ6VkNBUkQ=" download="Omar-Garcia-Brena.vcf">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
           Guardar contacto
-        </button>
+        </a>
       </div>
       <div class="hero-tags">
         <span class="htag">Videovigilancia</span><span class="htag">Redes e IT</span>
@@ -345,10 +345,10 @@ footer{padding:2rem;display:flex;align-items:center;justify-content:space-betwee
           <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
           Ver perfil en LinkedIn
         </a>
-        <button class="save-contact-btn" onclick="saveContact()" style="width:100%;margin-top:.5rem;justify-content:center;">
+        <a class="save-contact-btn" href="data:text/x-vcard;base64,QkVHSU46VkNBUkQNClZFUlNJT046My4wDQpGTjpPbWFyIEdhcmPDrWEgQnJlbmENCk46R2FyY8OtYSBCcmVuYTtPbWFyOzs7DQpUSVRMRTpDb25zdWx0b3IgVGVjbm9sw7NnaWNvIEluZGVwZW5kaWVudGUNCk9SRzpPbWFyIEdhcmPDrWEgQnJlbmENClRFTDtUWVBFPUNFTEwsVk9JQ0U6KzUyMTU1MTQ1NTIyMDINClRFTDtUWVBFPVdPUkssVk9JQ0U6KzUyMTU1MTQ1NTIyMDINCkVNQUlMO1RZUEU9SU5URVJORVQ6b2dhcmNpYWJyZW5hQGdtYWlsLmNvbQ0KVVJMOmh0dHBzOi8vb2dhcmNpYWJyZW5hLmdpdGh1Yi5pbw0KQURSO1RZUEU9V09SSzo7O09heGFjYTtPYXhhY2E7O03DqXhpY28NCk5PVEU6Q29uc3VsdG9yIFRlY25vbMOzZ2ljby4gVmlkZW92aWdpbGFuY2lhIENDVFYgfCBSZWRlcyBlIElUIHwgUE9TIHwgQ2xvdWQgZSBJQSB8IEF1dG9tYXRpemFjacOzbiB8IElvVC4gV2ViOiBvZ2FyY2lhYnJlbmEuZ2l0aHViLmlvDQpYLVNPQ0lBTFBST0ZJTEU7dHlwZT1saW5rZWRpbjpodHRwczovL3d3dy5saW5rZWRpbi5jb20vaW4vb21hci1nYXJjaWEtYnJlbmEtYjMyMTExMTEwDQpFTkQ6VkNBUkQ=" download="Omar-Garcia-Brena.vcf" style="width:100%;margin-top:.5rem;justify-content:center;">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
           Guardar contacto
-        </button>
+        </a>
       </div>
     </div>
   </div>
@@ -513,10 +513,10 @@ footer{padding:2rem;display:flex;align-items:center;justify-content:space-betwee
 <footer>
   <span class="f-name">Omar García Brena</span>
   <span class="f-mid">Consultor Tecnológico · Oaxaca, México</span>
-  <button class="save-contact-btn" onclick="saveContact()" style="font-size:11px;padding:8px 16px;">
+  <a class="save-contact-btn" href="data:text/x-vcard;base64,QkVHSU46VkNBUkQNClZFUlNJT046My4wDQpGTjpPbWFyIEdhcmPDrWEgQnJlbmENCk46R2FyY8OtYSBCcmVuYTtPbWFyOzs7DQpUSVRMRTpDb25zdWx0b3IgVGVjbm9sw7NnaWNvIEluZGVwZW5kaWVudGUNCk9SRzpPbWFyIEdhcmPDrWEgQnJlbmENClRFTDtUWVBFPUNFTEwsVk9JQ0U6KzUyMTU1MTQ1NTIyMDINClRFTDtUWVBFPVdPUkssVk9JQ0U6KzUyMTU1MTQ1NTIyMDINCkVNQUlMO1RZUEU9SU5URVJORVQ6b2dhcmNpYWJyZW5hQGdtYWlsLmNvbQ0KVVJMOmh0dHBzOi8vb2dhcmNpYWJyZW5hLmdpdGh1Yi5pbw0KQURSO1RZUEU9V09SSzo7O09heGFjYTtPYXhhY2E7O03DqXhpY28NCk5PVEU6Q29uc3VsdG9yIFRlY25vbMOzZ2ljby4gVmlkZW92aWdpbGFuY2lhIENDVFYgfCBSZWRlcyBlIElUIHwgUE9TIHwgQ2xvdWQgZSBJQSB8IEF1dG9tYXRpemFjacOzbiB8IElvVC4gV2ViOiBvZ2FyY2lhYnJlbmEuZ2l0aHViLmlvDQpYLVNPQ0lBTFBST0ZJTEU7dHlwZT1saW5rZWRpbjpodHRwczovL3d3dy5saW5rZWRpbi5jb20vaW4vb21hci1nYXJjaWEtYnJlbmEtYjMyMTExMTEwDQpFTkQ6VkNBUkQ=" download="Omar-Garcia-Brena.vcf" style="font-size:11px;padding:8px 16px;">
     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
     Guardar contacto
-  </button>
+  </a>
   <span class="f-right">© 2025</span>
 </footer>
 
@@ -621,66 +621,7 @@ document.querySelector('.filter-btn[data-cat="all"]').addEventListener('click', 
 
 loadDemos();
 
-// ── vCard — Guardar contacto ────────────────────────────
-function saveContact() {
-  const vcardData = [
-    'BEGIN:VCARD',
-    'VERSION:3.0',
-    'FN:Omar García Brena',
-    'N:García Brena;Omar;;;',
-    'TITLE:Consultor Tecnológico Independiente',
-    'ORG:Omar García Brena',
-    'TEL;TYPE=CELL,VOICE:+5215514552202',
-    'TEL;TYPE=WORK,VOICE:+5215514552202',
-    'EMAIL;TYPE=INTERNET:ogarciabrena@gmail.com',
-    'URL:https://ogarciabrena.github.io',
-    'ADR;TYPE=WORK:;;Oaxaca;Oaxaca;;México',
-    'NOTE:Consultor Tecnológico Independiente. Especialidades: Videovigilancia CCTV | Redes e IT | POS | Cloud e IA Aplicada | Automatización | Control de Acceso | IoT. Web: ogarciabrena.github.io',
-    'X-SOCIALPROFILE;type=linkedin:https://www.linkedin.com/in/omar-garcia-brena-b32111110',
-    'END:VCARD'
-  ].join('\r\n');
-
-  const blob = new Blob([vcardData], { type: 'text/x-vcard;charset=utf-8' });
-  const file = new File([blob], 'Omar-Garcia-Brena.vcf', { type: 'text/x-vcard' });
-
-  // Android Chrome — diálogo nativo del sistema
-  if (navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) {
-    navigator.share({ files: [file], title: 'Omar García Brena', text: 'Consultor Tecnológico' })
-    .then(() => showSaveSuccess())
-    .catch(err => { if (err.name !== 'AbortError') fallbackSave(blob); });
-    return;
-  }
-  fallbackSave(blob);
-}
-
-function fallbackSave(blob) {
-  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-  if (isIOS) {
-    const reader = new FileReader();
-    reader.onload = function(e) {
-      window.location.href = e.target.result;
-    };
-    reader.readAsDataURL(blob);
-  } else {
-    const url = URL.createObjectURL(blob);
-    const a   = document.createElement('a');
-    a.href = url; a.download = 'Omar-Garcia-Brena.vcf';
-    document.body.appendChild(a); a.click();
-    document.body.removeChild(a); URL.revokeObjectURL(url);
-  }
-  showSaveSuccess();
-}
-
-function showSaveSuccess() {
-  document.querySelectorAll('.save-contact-btn').forEach(btn => {
-    const orig = btn.innerHTML;
-    btn.innerHTML = '✓ &nbsp;¡Listo, ya tienes mi contacto!';
-    btn.style.background = 'var(--accent2)';
-    btn.style.color = 'var(--bg)';
-    setTimeout(() => { btn.innerHTML = orig; btn.style.background = ''; btn.style.color = ''; }, 3500);
-  });
-}
-
+// ── Lead form (vCard via direct data URI) ──────────────────────────────────────
 // ── Lead form ────────────────────────────────────────────
 function submitLead() {
   const name    = document.getElementById('f-name').value.trim();
