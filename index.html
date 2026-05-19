@@ -89,18 +89,18 @@ h1 em{color:var(--accent);font-style:italic;font-weight:400}
 .htag{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);padding:4px 12px;border-radius:20px}
 
 /* HERO CARD */
-.hero-card{background:rgba(20,23,20,0.75);border:1px solid var(--border2);border-radius:8px;padding:1.75rem;backdrop-filter:blur(12px)}
-.card-avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--accent2),#2d5a38);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:18px;font-weight:700;color:#fff;margin-bottom:1rem}
-.card-name{font-family:var(--serif);font-size:20px;font-weight:700;color:var(--text);margin-bottom:2px;letter-spacing:.01em}
+.hero-card{background:rgba(14,16,14,0.55);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:1.5rem;backdrop-filter:blur(16px)}
+.card-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--accent2),#2d5a38);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:16px;font-weight:700;color:#fff;margin-bottom:.9rem}
+.card-name{font-family:var(--serif);font-size:17px;font-weight:700;color:var(--text);margin-bottom:2px;letter-spacing:.01em}
 .card-role{font-size:11px;color:var(--accent2);font-weight:500;letter-spacing:.06em;text-transform:uppercase;margin-bottom:1.25rem}
-.card-chips{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:1.25rem}
-.cchip{font-size:10px;color:var(--muted);background:rgba(255,255,255,.04);border:1px solid var(--border);padding:3px 9px;border-radius:20px}
-.card-div{border:none;border-top:1px solid var(--border);margin:.9rem 0}
+.card-chips{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:.9rem}
+.cchip{font-size:10px;color:var(--muted);background:rgba(255,255,255,.04);border:1px solid var(--border);padding:2px 8px;border-radius:20px}
+.card-div{border:none;border-top:1px solid var(--border);margin:.6rem 0}
 .card-contact{display:flex;flex-direction:column;gap:.55rem}
-.cc-item{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:7px}
+.cc-item{font-size:11px;color:var(--muted);display:flex;align-items:center;gap:6px}
 .cc-item a{color:var(--accent);text-decoration:none;transition:opacity .2s}
 .cc-item a:hover{opacity:.75}
-.li-btn{margin-top:.9rem;display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--accent2);text-decoration:none;padding:7px 14px;border:1px solid rgba(90,148,104,.25);border-radius:2px;background:rgba(90,148,104,.06);transition:background .2s}
+.li-btn{margin-top:.6rem;display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--accent2);text-decoration:none;padding:6px 12px;border:1px solid rgba(90,148,104,.25);border-radius:2px;background:rgba(90,148,104,.06);transition:background .2s}
 .li-btn:hover{background:rgba(90,148,104,.12)}
 
 /* MARQUEE */
@@ -269,11 +269,12 @@ footer{padding:2rem;display:flex;align-items:center;justify-content:space-betwee
 /* RESPONSIVE */
 /* Hero card mobile */
 @media(max-width:900px){
-  .hero-inner{grid-template-columns:1fr}
   .hero-card{
     display:block !important;
-    margin-top:2.5rem;
+    margin-top:1.75rem;
     width:100%;
+    border-radius:10px;
+    padding:1.25rem;
   }
 }
 
@@ -346,9 +347,9 @@ footer{padding:2rem;display:flex;align-items:center;justify-content:space-betwee
         </div>
         <hr class="card-div">
         <div class="card-contact">
-          <div class="cc-item">✉ <a href="mailto:ogarciabrena@gmail.com">ogarciabrena@gmail.com</a></div>
-          <div class="cc-item">↗ <a href="https://wa.me/5215514552202">+52 55 1455 2202</a></div>
-          <div class="cc-item">◎ Oaxaca · México</div>
+          <div class="cc-item">✉️ <a href="mailto:ogarciabrena@gmail.com">ogarciabrena@gmail.com</a></div>
+          <div class="cc-item">💬 <a href="https://wa.me/5215514552202">+52 55 1455 2202</a></div>
+          <div class="cc-item">📍 Oaxaca · México</div>
         </div>
         <a href="https://www.linkedin.com/in/omar-garcia-brena-b32111110" target="_blank" class="li-btn">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
@@ -476,13 +477,7 @@ footer{padding:2rem;display:flex;align-items:center;justify-content:space-betwee
     <div class="contact-grid fi">
       <div>
         <p style="font-size:1rem;color:var(--muted);line-height:1.85;font-weight:300;margin:1.5rem 0 1.75rem">Déjame tus datos y te contacto en menos de 24 horas. Oaxaca o cualquier estado — bienvenido.</p>
-        <div class="direct-links">
-          <a href="mailto:ogarciabrena@gmail.com" class="dlink"><div class="dlink-ico">✉</div><div><div class="dlink-label">Email</div><div class="dlink-val">ogarciabrena@gmail.com</div></div><span class="dlink-arr">↗</span></a>
-          <a href="https://wa.me/5215514552202" target="_blank" class="dlink"><div class="dlink-ico">💬</div><div><div class="dlink-label">WhatsApp</div><div class="dlink-val">+52 55 1455 2202</div></div><span class="dlink-arr">↗</span></a>
-          <a href="https://www.linkedin.com/in/omar-garcia-brena-b32111110" target="_blank" class="dlink"><div class="dlink-ico" style="color:#4a9eda"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div><div><div class="dlink-label">LinkedIn</div><div class="dlink-val">Omar García Brena</div></div><span class="dlink-arr">↗</span></a>
-        </div>
-      </div>
-      <div class="lead-form">
+        <div class="lead-form">
         <div id="form-content">
           <p class="form-title">¿Tienes un proyecto?</p>
           <p class="form-sub">Llena el formulario y te respondo en menos de 24 horas.</p>
