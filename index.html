@@ -640,8 +640,8 @@ function saveContact() {
     'END:VCARD'
   ].join('\r\n');
 
-  const blob = new Blob([vcardData], { type: 'text/vcard;charset=utf-8' });
-  const file = new File([blob], 'Omar-Garcia-Brena.vcf', { type: 'text/vcard' });
+  const blob = new Blob([vcardData], { type: 'text/x-vcard;charset=utf-8' });
+  const file = new File([blob], 'Omar-Garcia-Brena.vcf', { type: 'text/x-vcard' });
 
   // Android Chrome — diálogo nativo del sistema
   if (navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) {
@@ -654,11 +654,20 @@ function saveContact() {
 }
 
 function fallbackSave(blob) {
-  const url = URL.createObjectURL(blob);
-  const a   = document.createElement('a');
-  a.href = url; a.download = 'Omar-Garcia-Brena.vcf';
-  document.body.appendChild(a); a.click();
-  document.body.removeChild(a); URL.revokeObjectURL(url);
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  if (isIOS) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      window.location.href = e.target.result;
+    };
+    reader.readAsDataURL(blob);
+  } else {
+    const url = URL.createObjectURL(blob);
+    const a   = document.createElement('a');
+    a.href = url; a.download = 'Omar-Garcia-Brena.vcf';
+    document.body.appendChild(a); a.click();
+    document.body.removeChild(a); URL.revokeObjectURL(url);
+  }
   showSaveSuccess();
 }
 
