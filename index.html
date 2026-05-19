@@ -142,7 +142,7 @@ h2{font-family:var(--serif);font-size:clamp(2rem,3.5vw,3.2rem);font-weight:700;l
   border:1px solid var(--border);border-radius:8px;overflow:hidden;
   margin-top:2.5rem;
 }
-.srv-card{background:rgba(20,23,20,.6);backdrop-filter:blur(8px);padding:1.75rem;transition:background .25s}
+.srv-card{background:rgba(20,23,20,.6);backdrop-filter:blur(8px);padding:1.5rem;transition:background .25s}
 .srv-card:hover{background:rgba(25,29,24,.9)}
 .srv-num{font-size:10px;letter-spacing:.15em;color:var(--muted);margin-bottom:.65rem}
 .srv-ico{font-size:22px;margin-bottom:.65rem}
@@ -169,6 +169,16 @@ h2{font-family:var(--serif);font-size:clamp(2rem,3.5vw,3.2rem);font-weight:700;l
 .cat-desc{font-size:12px;color:var(--muted);font-weight:300;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .cat-arrow{font-size:14px;color:var(--muted);flex-shrink:0}
 .cat-empty{padding:3rem;text-align:center;color:var(--muted);font-size:.9rem}
+.cat-more-btn{
+  width:100%;padding:.85rem;
+  background:rgba(20,23,20,.4);
+  border:1px solid var(--border);border-top:none;
+  color:var(--accent2);font-family:var(--sans);
+  font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+  cursor:pointer;border-radius:0 0 8px 8px;
+  transition:background .2s;
+}
+.cat-more-btn:hover{background:rgba(28,33,28,.8)}
 .cat-loading{padding:2.5rem;text-align:center;color:var(--muted);font-size:.85rem;display:flex;align-items:center;justify-content:center;gap:10px}
 .spinner{width:16px;height:16px;border:2px solid var(--border2);border-top-color:var(--accent);border-radius:50%;animation:spin .8s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
@@ -222,8 +232,8 @@ footer{padding:2rem;display:flex;align-items:center;justify-content:space-betwee
 /* RESPONSIVE */
 @media(max-width:900px){
   .hero-inner{grid-template-columns:1fr}
-  .vcard{display:block;margin-top:2rem;width:100%}
-  .srv-grid{grid-template-columns:1fr 1fr}
+  .vcard{display:block;margin-top:2rem;width:calc(100% - 2rem);margin-left:auto;margin-right:auto;background:rgba(14,16,14,0.45);border-radius:14px;}
+  .srv-grid{grid-template-columns:1fr 1fr} .srv-title{font-size:16px} .srv-desc{font-size:12px}
   .contact-grid{grid-template-columns:1fr}
   .sec-inner{padding:3.5rem 1.25rem}
   nav .nav-links li:not(:last-child):not(:nth-last-child(2)){display:none}
@@ -356,7 +366,7 @@ footer{padding:2rem;display:flex;align-items:center;justify-content:space-betwee
     <h2 style="margin-bottom:1.5rem">Consultor con<br>experiencia <em style="color:var(--accent);font-style:italic;font-weight:400">real</em></h2>
     <div style="max-width:640px">
       <p style="font-size:1rem;color:var(--text);line-height:1.85;font-weight:400;opacity:.85;margin-bottom:1rem">
-        Trabajo con negocios que necesitan tecnología que funcione desde el día uno. He instalado redes, cámaras y sistemas POS en negocios propios — conozco el problema desde adentro.
+        Trabajo con negocios que necesitan tecnología que funcione desde el día uno. He instalado redes, cámaras y sistemas POS en negocios propios. Conozco el problema desde adentro.
       </p>
       <p style="font-size:1rem;color:var(--text);line-height:1.85;font-weight:400;opacity:.85">
         Con base en Oaxaca, disponible en todo México. Un solo punto de contacto para toda la cadena tecnológica de tu negocio: desde el cableado físico hasta cloud, automatización e IA.
@@ -369,15 +379,10 @@ footer{padding:2rem;display:flex;align-items:center;justify-content:space-betwee
 <div class="section" id="contacto">
   <div class="sec-inner">
     <div class="fi"><p class="sec-label">04 — Contacto</p><h2>Cuéntame tu proyecto</h2></div>
-    <div class="contact-grid fi">
+    <div class="contact-grid fi" style="grid-template-columns:1fr;max-width:580px">
       <div>
-        <p class="contact-intro" style="margin-top:1.5rem">Déjame tus datos y te contacto en menos de 24 horas. <strong>Cualquier estado, bienvenido.</strong></p>
-        <div class="quick-links">
-          <a href="mailto:ogarciabrena@gmail.com" class="qlink"><div class="qlink-ico">✉️</div><div><div class="qlink-label">Email</div><div class="qlink-val">ogarciabrena@gmail.com</div></div><span class="qlink-arr">↗</span></a>
-          <a href="https://wa.me/5215514552202" target="_blank" class="qlink"><div class="qlink-ico">💬</div><div><div class="qlink-label">WhatsApp</div><div class="qlink-val">+52 55 1455 2202</div></div><span class="qlink-arr">↗</span></a>
-        </div>
-      </div>
-      <div class="lead-form">
+        <p class="contact-intro" style="margin-top:1.5rem">Déjame tus datos y te contacto en menos de 24 horas.</p>
+        <div class="lead-form">
         <div id="form-content">
           <p class="form-title">¿Tienes un proyecto?</p>
           <p class="form-sub">Te respondo en menos de 24 horas.</p>
