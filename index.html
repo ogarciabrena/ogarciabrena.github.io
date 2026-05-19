@@ -623,7 +623,7 @@ loadDemos();
 
 // ── vCard — Guardar contacto ────────────────────────────
 function saveContact() {
-  const vcard = [
+  const vcardData = [
     'BEGIN:VCARD',
     'VERSION:3.0',
     'FN:Omar García Brena',
@@ -640,20 +640,35 @@ function saveContact() {
     'END:VCARD'
   ].join('\r\n');
 
-  const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
-  const url  = URL.createObjectURL(blob);
-  const a    = document.createElement('a');
+  const blob = new Blob([vcardData], { type: 'text/vcard;charset=utf-8' });
+  const file = new File([blob], 'Omar-Garcia-Brena.vcf', { type: 'text/vcard' });
+
+  // Android Chrome — diálogo nativo del sistema
+  if (navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) {
+    navigator.share({ files: [file], title: 'Omar García Brena', text: 'Consultor Tecnológico' })
+    .then(() => showSaveSuccess())
+    .catch(err => { if (err.name !== 'AbortError') fallbackSave(blob); });
+    return;
+  }
+  fallbackSave(blob);
+}
+
+function fallbackSave(blob) {
+  const url = URL.createObjectURL(blob);
+  const a   = document.createElement('a');
   a.href = url; a.download = 'Omar-Garcia-Brena.vcf';
   document.body.appendChild(a); a.click();
   document.body.removeChild(a); URL.revokeObjectURL(url);
+  showSaveSuccess();
+}
 
-  // Feedback
+function showSaveSuccess() {
   document.querySelectorAll('.save-contact-btn').forEach(btn => {
     const orig = btn.innerHTML;
-    btn.innerHTML = '✓ &nbsp;Contacto guardado';
+    btn.innerHTML = '✓ &nbsp;¡Listo, ya tienes mi contacto!';
     btn.style.background = 'var(--accent2)';
     btn.style.color = 'var(--bg)';
-    setTimeout(() => { btn.innerHTML = orig; btn.style.background = ''; btn.style.color = ''; }, 3000);
+    setTimeout(() => { btn.innerHTML = orig; btn.style.background = ''; btn.style.color = ''; }, 3500);
   });
 }
 
