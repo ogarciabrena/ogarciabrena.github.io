@@ -430,7 +430,7 @@ if (localStorage.getItem('ogb_cache_ver') !== CACHE_VERSION) {
 }
 
 const API_TOKEN  = 'j9Lt0We6XYJyqQ08E_3skdiM3nMV53szfSB7M58B_rw';
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz-RM-dI_pQHIm5pWUIBppWFzw-cxbCTp1_pe8AkZatTE-u8lm2Z4rShr3TgYPMSpEYhQ/exec';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyzsu7ituHg3jk7Wda6gSu6JHdraDcAFEUDK12UcAB0cobd0Kj3ej9QAaNab2hzZk_Tyw/exec';
 const CAT_ICONS = {'POS':'🖥️','Redes':'🌐','CCTV':'📷','Cloud':'☁️','IoT':'📡','Automatización':'⚡','IA':'🤖','General':'🔧','Restaurante':'🍽️','Agenda':'📅','Inventario':'📦','Personal':'👤','Negocios':'💼'};
 let allDemos = [];
 
@@ -523,14 +523,17 @@ async function loadConfig() {
     // No cache for config — changes must reflect immediately
     const res  = await fetch(SCRIPT_URL + '?action=config&t=' + API_TOKEN, {cache: 'no-store'});
     const data = await res.json();
-    const cfg  = data.config || {};
+    const raw = data.config || {};
+    // Normalize all values: trim + uppercase for boolean checks
+    const cfg = {};
+    Object.keys(raw).forEach(k => { cfg[k] = String(raw[k] === undefined || raw[k] === null ? '' : raw[k]).trim(); });
 
     const contacts = document.getElementById('vc-contacts');
     const LI_SVG = '<svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>';
 
     // Email
     const emailVal  = cfg.email_address || '';
-    const emailShow = cfg.email_visible !== 'FALSE';
+    const emailShow = cfg.email_visible.toUpperCase() !== 'FALSE';
     if (emailVal && emailShow && contacts) {
       const row = document.createElement('div');
       row.className = 'vc-row';
@@ -541,7 +544,7 @@ async function loadConfig() {
     // WhatsApp
     const waUrl     = cfg.whatsapp_url     || '';
     const waText    = cfg.whatsapp_text    || '';
-    const waVisible = cfg.whatsapp_visible !== 'FALSE';
+    const waVisible = cfg.whatsapp_visible.toUpperCase() !== 'FALSE';
     if (waUrl && waText && waVisible && contacts) {
       const row = document.createElement('div');
       row.className = 'vc-row';
@@ -552,7 +555,7 @@ async function loadConfig() {
     // LinkedIn — vCard
     const liUrl     = cfg.linkedin_url     || '';
     const liText    = cfg.linkedin_text    || 'Ver perfil en LinkedIn';
-    const liVisible = cfg.linkedin_visible !== 'FALSE';
+    const liVisible = cfg.linkedin_visible.toUpperCase() !== 'FALSE';
     const vcLi      = document.getElementById('vc-linkedin');
     if (liUrl && liVisible && vcLi) {
       vcLi.innerHTML = '<a href="' + liUrl + '" target="_blank" class="vc-li">' + LI_SVG + ' ' + liText + '</a>';
