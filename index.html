@@ -422,6 +422,13 @@ footer{padding:2rem;display:flex;align-items:center;justify-content:space-betwee
 </div>
 
 <script>
+// Cache buster — change this if you update the token or need fresh data
+const CACHE_VERSION = 'v3';
+if (localStorage.getItem('ogb_cache_ver') !== CACHE_VERSION) {
+  Object.keys(localStorage).filter(k => k.startsWith('ogb_')).forEach(k => localStorage.removeItem(k));
+  localStorage.setItem('ogb_cache_ver', CACHE_VERSION);
+}
+
 const API_TOKEN  = 'j9Lt0We6XYJyqQ08E_3skdiM3nMV53szfSB7M58B_rw';
 const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz-RM-dI_pQHIm5pWUIBppWFzw-cxbCTp1_pe8AkZatTE-u8lm2Z4rShr3TgYPMSpEYhQ/exec';
 const CAT_ICONS = {'POS':'🖥️','Redes':'🌐','CCTV':'📷','Cloud':'☁️','IoT':'📡','Automatización':'⚡','IA':'🤖','General':'🔧','Restaurante':'🍽️','Agenda':'📅','Inventario':'📦','Personal':'👤','Negocios':'💼'};
@@ -435,7 +442,7 @@ document.querySelectorAll('.fi').forEach(el => obs.observe(el));
 
 // Catálogo
 async function loadCatalog() {
-  const CACHE_KEY = 'ogb_demos_v2';
+  const CACHE_KEY = 'ogb_demos_v3';
   const TTL = 30 * 60 * 1000;
   try {
     const cached = localStorage.getItem(CACHE_KEY);
@@ -513,7 +520,8 @@ loadConfig();
 
 async function loadConfig() {
   try {
-    const res  = await fetch(SCRIPT_URL + '?action=config&t=' + API_TOKEN);
+    // No cache for config — changes must reflect immediately
+    const res  = await fetch(SCRIPT_URL + '?action=config&t=' + API_TOKEN, {cache: 'no-store'});
     const data = await res.json();
     const cfg  = data.config || {};
 
